@@ -1,0 +1,12 @@
+type Query {
+    trends: [Trend!]
+}
+type Mutation {
+    addTrend(title: String!, creator: String!, img: String!, price: String!): Trend!
+}
+type Trend {
+    title: String!
+    creator: String!
+    img: String!
+    price: String!
+}

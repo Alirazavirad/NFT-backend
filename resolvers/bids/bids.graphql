@@ -1,0 +1,12 @@
+type Query {
+    bids: [Bid!]
+}
+type Mutation {
+    addBid(title: String!, creator: String!, img: String!, price: String!): Bid!
+}
+type Bid {
+    title: String!
+    creator: String!
+    img: String!
+    price: String!
+}

@@ -1,0 +1,12 @@
+type Query {
+    icons: [Icon!]
+}
+
+type Mutation {
+    addIcon(title: String!, icon: String!, color: String!): Icon!
+}
+type Icon {
+    title: String!
+    icon: String!
+    color: String!
+}
