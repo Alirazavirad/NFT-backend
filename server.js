@@ -11,7 +11,8 @@ app.use("/upload", Uploadroutes);
 app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-
+const dotenv = require("dotenv");
+dotenv.config();
 const schemas = loadFilesSync(path.join(__dirname, "**/*.graphql"));
 const resolvers = loadFilesSync(path.join(__dirname, "**/*.resolver.js"));
 
@@ -30,5 +31,5 @@ app.use(
   })
 );
 
-mongoose.connect("mongodb://127.0.0.1:27017/NFT");
+mongoose.connect(process.env.MONGODB_URI);
 app.listen(5000);
